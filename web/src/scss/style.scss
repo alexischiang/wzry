@@ -1,0 +1,178 @@
+@import "./variables";
+
+// reset
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+  background: #f1f1f1;
+}
+
+a {
+  color: #999999;
+}
+
+// width, height
+.w-100 {
+  width: 100%;
+}
+
+// colors
+@each $colorkey, $color in $colors {
+  .text-#{$colorkey} {
+    color: $color;
+  }
+
+  .bg-#{$colorkey} {
+    background-color: $color;
+  }
+}
+
+// text-overflow
+.text-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// text
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important;
+  }
+}
+
+// font-size
+@each $key, $value in $font-sizes {
+  .fs-#{$key} {
+    font-size: $value * $base-font-size !important ;
+  }
+}
+
+// flex
+.d-flex {
+  display: flex;
+}
+.flex-wrapped {
+  flex-wrap: wrap;
+}
+
+@each $key, $value in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+
+@each $key, $value in $flex-ai {
+  .ai-#{$key} {
+    align-items: $value;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+// .mt-1
+@each $typeKey, $type in $spacing-types {
+  @each $dirKey, $dir in $spacing-dir {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$dirKey}-#{$sizeKey} {
+        #{$type}-#{$dir}: $size * $spacing-base-size;
+      }
+    }
+  }
+}
+
+// .mx-1
+@each $typeKey, $type in $spacing-types {
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $spacing-base-size;
+      #{$type}-right: $size * $spacing-base-size;
+    }
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $spacing-base-size;
+      #{$type}-bottom: $size * $spacing-base-size;
+    }
+  }
+}
+
+// .m-1
+@each $typeKey, $type in $spacing-types {
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $spacing-base-size;
+    }
+  }
+}
+
+// button
+.btn {
+  border: none;
+  border-radius: 0.1538rem;
+  font-size: $base-font-size * map-get($map: $font-sizes, $key: "s");
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}
+
+// nav
+.nav {
+  .nav-item {
+    border-bottom: 3px solid transparent;
+    &.active {
+      border-bottom: 3px solid white;
+    }
+  }
+}
+
+//sprite
+.sprite-item {
+  width: 25%;
+  border-right: 1px solid map-get($map: $colors, $key: "grey-1");
+  &:nth-child(4n) {
+    border-right: none;
+  }
+}
+
+.sprite {
+  background: url(../assets/sprite-index.png) no-repeat 0 0;
+  background-size: 28.8462rem;
+  display: inline-block;
+  &.sprite-blz {
+    width: 1.7692rem;
+    height: 1.5385rem;
+    background-position: 63.546% 15.517%;
+  }
+  &.sprite-arrow {
+    width: 0.7692rem;
+    height: 0.7692rem;
+    background-position: 38.577% 52.076%;
+  }
+}
+
+//card
+.card-header {
+  border-bottom: 1px solid map-get($map: $colors, $key: "grey-1");
+}
+
+.card-body {
+  .nav-item {
+    line-height: 1rem;
+    border-bottom: 3px solid transparent;
+    &.active {
+      color: map-get($map: $colors, $key: "primary");
+      border-bottom: 3px solid map-get($map: $colors, $key: "primary");
+    }
+  }
+}

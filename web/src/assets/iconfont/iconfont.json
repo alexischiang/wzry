@@ -1,0 +1,44 @@
+{
+  "id": "1567305",
+  "name": "wzry",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1608363",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "5679137",
+      "name": "book",
+      "font_class": "book",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "6654507",
+      "name": "card-hero",
+      "font_class": "card-hero",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "10101831",
+      "name": "more read",
+      "font_class": "moreread",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "10337412",
+      "name": "video",
+      "font_class": "video",
+      "unicode": "e761",
+      "unicode_decimal": 59233
+    }
+  ]
+}
